@@ -33,7 +33,8 @@ fun cml_main (program_name, arglist) =
     end
 
 fun main (program_name, arglist) =
-    (RunCML.doit (fn () => cml_main(program_name, arglist), NONE);
+    (UnixSignals.setHandler (UnixSignals.sigPIPE, UnixSignals.IGNORE);
+     RunCML.doit (fn () => cml_main(program_name, arglist), NONE);
      OS.Process.success)
 
 end
