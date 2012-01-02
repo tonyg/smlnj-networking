@@ -1,2 +1,2 @@
 #!/bin/sh
-exec sml @SMLload=test.x86-darwin "$@"
+exec sml @SMLload=test "$@"
